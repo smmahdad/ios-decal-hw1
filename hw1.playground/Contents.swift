@@ -22,31 +22,33 @@ class Words {
 //: ### variables the same type? If not, why?
 
 
-//: [EXPLAIN YOUR ANSWER HERE]
+//: Yes, they are the same String optional type. One just unpacks and the other states it is an optional.
 
 
 //: ## Q2: Variable Types and Function Types
-    func arePalindromes(words: [String]) -> Bool {
+    static func arePalindromes(words: [String]) -> Bool {
         let reversedWords = words.map() {String($0.characters.reverse())}
         var numElements = words.count
         
-        for let i = 0; i < numElements; i++ {
+        for i in 0..<numElements {
             if words[i] != reversedWords[i] {
                 return false
             }
         }
+        return true
     }
 //: ### Why does the compiler dislike the **for loop**? Fix it.
 //: ### What else is wrong with this function? You may have to refer to (but **not**
 //: ### change) the code at the very bottom. Debug the function.
 
 
-//: [EXPLAIN YOUR ANSWER HERE]
+//: Didn't have the static keyword. Needed for the way we are calling the function at the bottom. Also
+//: we weren't return a boolean if we didn't exit the loop, so had to fix it.
 
 
 //: ## Q3: More Functions and Object Initialization
-    class func isAnagram() -> Bool {
-        var countLetters : [Character : Int]
+    func isAnagram() -> Bool {
+        var countLetters = [Character : Int]()
         var lenA = self.wordA.characters.count
         var lenB = self.wordB.characters.count
         
@@ -81,7 +83,7 @@ class Words {
             }
         }
         
-        return nil
+        return true
     }
 //: ### What is the problem with declaring **countLetters** as we do in **Line X**,
 //: ### and then using it in **Line Y**? Fix it (by only changing **Line X**).
@@ -89,7 +91,8 @@ class Words {
 //: ### change) the code at the very bottom. Debug the function.
 
 
-//: [EXPLAIN YOUR ANSWER HERE]
+//: Had to correctly instantiate the dictionary object. Also, keyword class was used when we were trying to reference an instance variable
+//: so I removed that. Finally, we don't ever state when something is true for the function, so we had to swap out the nil value with true.
     
     
 }

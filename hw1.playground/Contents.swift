@@ -4,10 +4,6 @@
 //: you must go to Editor -> Show Raw Markup and edit the bracketed text.
 //: Once done, go to Editor -> Show Rendered Markup to return to the previous view mode.
 
-
-import UIKit
-
-
 //: ## Q1: Optionals
 class Words {
     var wordA : String!
@@ -105,10 +101,18 @@ class Words {
 
 
 //: **DO NOT** touch any code below this point.
-Words.arePalindromes(["hih", "racecar", "mom", "wow"])
-Words.arePalindromes(["gene", "shawn", "hello"])
+print("---OUTPUT---")
+
+print(Words.arePalindromes(["hih", "racecar", "mom", "wow"]))
+
+print(Words.arePalindromes(["gene", "shawn", "hello"]))
+
 var wordsObj = Words.init(wordA: "anagram", wordB: "managra")
-wordsObj.isAnagram()
+
+print(wordsObj.isAnagram())
+
 wordsObj.wordA = "hello"
+
 wordsObj.wordB = "what"
-wordsObj.isAnagram()
+
+print(wordsObj.isAnagram())
